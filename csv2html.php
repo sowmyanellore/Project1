@@ -1,7 +1,25 @@
 <?php
 
+$obj = new csv2html();
+
+
+class csv2html {
+
+public function __construct()
+    {
+        echo "in upload";
+         
+           $this::csv();
+        
+    }
+
+public static function csv(){
  $sow  = $_REQUEST["file"];
-//echo "hii";
+echo '<html>';
+echo '<head>';
+echo '<link rel="stylesheet" href="style.css">';
+echo '</head>';
+echo '<body>';
 $row = 1;
 if (($handle = fopen($sow, "r")) !== FALSE) {
 echo '<table>';
@@ -20,5 +38,10 @@ echo '<table>';
     }
     echo '</table>';
     fclose($handle);
+    }
+    
+    echo '</body>';
+    echo '</html>';
+    }
 }
 ?>
