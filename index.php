@@ -4,19 +4,17 @@ error_reporting(E_ALL);
 
 
 class Manage {
-    public static function autoload($class) {
-        include $class . '.php';
-        echo "rrr";
-    
+       public static function autoload($class) {
+       include $class . '.php';
+       echo "rrr";
+       }
     }
-}
 
 spl_autoload_register(array('Manage', 'autoload'));
 
 $obj = new main();
 echo $obj::$html;
-//$obj1 = new csv2html();
-//echo $obj::post();
+
 
 class main
 {
@@ -30,22 +28,16 @@ $form .=   '<head>';
 $form .=   '<style>.error {color: #FF0000;}';
 $form .=   '<link rel="stylesheet" href="styles.css">';
 $form .=   '</style></head><body>';
-
 $form .=   '<form action="upload.php" method="post" enctype="multipart/form-data">';
 $form .=   ' BROWSE THE FILE TO UPLOAD: <br><br>';
-   $form .=   ' <input type="file" name="fileToUpload" id="fileToUpload">';
- 
-  $form .=   '<br><br>';
-  $form .=   ' <br><br> <input type="submit" value="Upload File" name="submit">';
+$form .=   ' <input type="file" name="fileToUpload" id="fileToUpload">';
+$form .=   '<br><br>';
+$form .=   ' <br><br> <input type="submit" value="Upload File" name="submit">';
 $form .=   '</form>';
-
- $form .=   '</body>';
+$form .=   '</body>';
 $form .=   '</html>';
 $this::$html .= $form;
 }
+
 }
-
-
-
-
 ?>
