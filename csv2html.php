@@ -31,7 +31,7 @@
      while (($data = fgetcsv($handle, 1000, ",")) !== FALSE) {
         $num = count($data);
         echo '<tr>';
-         //echo "<p> $num fields in line $row: <br /></p>\n";
+        
          
          for ($c=0; $c < $num; $c++) {
             if ($row == 1) echo '<th>' . $data[$c] . '</th>';
